@@ -1,0 +1,27 @@
+<mat-tab-group>
+    <mat-tab label="Personal Information">
+        <app-personalinformation [personalInfoForm]="personalInfoForm"></app-personalinformation>
+    </mat-tab>
+    <mat-tab label="Address">
+        <mat-tab-group>
+            <mat-tab label="Present Address">
+                <app-present-permanent-address [addressForm]="presentAddressForm"></app-present-permanent-address>
+                <div class="px-5 py-4" align="right">
+                    <button class="btn btn-secondary btn-sm">Clear</button>
+                </div>
+            </mat-tab>
+            <mat-tab label="Previous Address">
+                <app-previous-address [addressForm]="previousAddressForm"></app-previous-address>
+                <div class="px-5 py-4" align="right">
+                    <button class="btn btn-secondary btn-sm">Clear</button>
+                </div>
+            </mat-tab>
+            <mat-tab label="Permanent Address">
+                <app-present-permanent-address [addressForm]="permanentAddressForm"></app-present-permanent-address>
+                <div class="px-5 py-4" align="right">
+                    <button class="btn btn-secondary btn-sm">Clear</button>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="tenantVerificationFormBuilder">
+    <div style="margin-left: 10px;">
+        <div class="row">
+            <div class="col">'
+                <h4
+                    style="color: darkblue; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-left: 1rem;">
+                    Tenant Verification Request</h4>
+                <mat-divider></mat-divider>
+                <mat-tab-group style="width: max-content;">
+                    <mat-tab label="Owner Information">
+                        <app-owner-information [ownerInfoForm]="ownerInfoForm"></app-owner-information>
+                    </mat-tab>
+                    <mat-tab label="Tenant Information">
+                        <app-tenant-information [tenantInfoForm]="tenantInfoForm"></app-tenant-information>
+                    </mat-tab>
+                    <mat-tab label="Family Member Information">
+                        <app-family-member-information [familyInfoForm]="familyInfoForm"></app-family-member-information>
+                    </mat-tab>
+                    <mat-tab label="Affidavit">
+                        <app-affidavit [affidavitForm]="affidavitForm"></app-affidavit>
+                    </mat-tab>
+                </mat-tab-group>
+                <div class="px-5 py-4" align="right">
+                    <button class="btn btn-secondary btn-sm" (click)="saveForm()">Save</button>
+                    <button class="btn btn-secondary btn-sm ms-2">Submit</button>
+                    <button class="btn btn-secondary btn-sm ms-2" (click)="closeForm()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

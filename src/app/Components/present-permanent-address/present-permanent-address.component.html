@@ -1,0 +1,143 @@
+<div [formGroup]="addressForm">
+    <div class="row d-flex mt-2" style="width: 100%;">
+        <div class="col">
+            <!-- <h1 class="text-white mb-4">Apply for a job</h1> -->
+            <div class="card" style="border-radius: 15px;">
+                <div class="card-body">
+                    <!-- Address tab -->
+                    <h3 style="color: darkblue; font-weight: bold;">Address</h3>
+    
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">House No.</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control form-control-sm" id="houseNo" formControlName="houseNo"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">Country</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="country" formControlName="country">
+                                        <option *ngFor="let item of nationality" [value]="item.id.nationalityCd" [selected]="item.id.nationalityCd===selectednationalityCode">{{item.nationality}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row align-items-center pt-2">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">Street Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control form-control-sm" id="streeName" formControlName="streeName"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">State</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <select class="form-control" (change)="onSelectedState($event)" id="state" formControlName="state">
+                                        <option value="">Select</option>
+                                        <option *ngFor="let item of state" [value]="item.id.stateCd">{{item.state}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row align-items-center pt-2">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">Colony / Locality/ Area</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control form-control-sm" id="colony" formControlName="colony"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">District</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <select class="form-control" (change)="onSelectedDistrict($event)" id="district" formControlName="district">
+                                        <option value="">Select</option>
+                                        <option *ngFor="let item of district" [value]="item.id.districtCd">{{item.district}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row align-items-center pt-2">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">Village/ Town/ City</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control form-control-sm" id="village" formControlName="village"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">Police Station</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="policeStation" formControlName="policeStation">
+                                        <option value="">Select</option>
+                                        <option *ngFor="let item of policeStation" [value]="item.id.psCd">{{item.ps}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row align-items-center pt-2">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">Tehsil /Block /Mandal</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control form-control-sm" id="tehsil" formControlName="tehsil"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">Pincode</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-sm" id="pincode" formControlName="pincode"/>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <hr class="my-2">
+                        <app-eform-file-upload></app-eform-file-upload>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,179 @@
+<div [formGroup]="personalInfoForm">
+    <section style="margin-top: 1rem;">
+        <div class="container h-100" style="width: 100vw; margin-left: 1rem;">
+            <div class="row d-flex h-100">
+                <div class="col">
+                    <!-- <h1 class="text-white mb-4">Apply for a job</h1> -->
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 py-1" style="background-color: lightsteelblue;">
+                                    <label for="">UID</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-sm" formControlName="uidNum"/>
+                                </div>
+                            </div>
+    
+                            <!-- <hr class="mx-n3"> -->
+    
+                            <div class="row align-items-center pt-2">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">First Name</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control form-control-sm" formControlName="fName"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Mobile No.</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control form-control-sm" formControlName="mobile"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <hr class="mx-n3"> -->
+    
+                            <div class="row align-items-center pt-2">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Middle Name</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control form-control-sm" formControlName="middleName"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Landline No.</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control form-control-sm" formControlName="landline"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row align-items-center pt-2">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Last Name</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control form-control-sm" formControlName="lName"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Relation Type</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select class="form-control" formControlName="relationType">
+                                                <option value="">Select</option>
+                                                <option *ngFor="let item of relationType" [value]="item.id.relationTypeCd">{{item.relationType}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row align-items-center pt-2">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Relative Name</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control form-control-sm" formControlName="relativeName"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Occupation</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select class="form-control" formControlName="occupation">
+                                                <option value="">Select</option>
+                                                <option *ngFor="let item of occupations" [value]="item.id.occupationCd">{{item.occupation}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row align-items-center pt-2">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Purpose of Tenancy</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select #dept class="form-control" formControlName="purposeofTenancy">
+                                                <option selected value="">Select</option>
+                                                <option value="R">Residential</option>
+                                                <option value="C">Commercial</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4 py-1" style="background-color: lightsteelblue;">
+                                            <label for="">Gender</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select class="form-control" formControlName="gender">
+                                                <option value="">Select</option>
+                                                <option *ngFor="let item of gender" [value]="item.id.genderCd">{{item.gender}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <hr>
+    
+                            <!-- Age panel tab -->
+                            <app-age-panel></app-age-panel>
+                            <!-- end -->
+    
+                            <div class=" py-2" align="right">
+                                <button class="btn btn-secondary btn-sm">Clear</button>
+                            </div>
+    
+                            <hr>
+    
+                            <!-- File Upload -->
+                            <app-eform-file-upload></app-eform-file-upload>
+                            <!-- end -->
+    <!-- 
+    
+                            <div class="px-5 py-4" align="right">
+                                <button class="btn btn-secondary btn-sm">Save</button>
+                                <button class="btn btn-secondary btn-sm ms-2">Submit</button>
+                                <button class="btn btn-secondary btn-sm ms-2">Close</button>
+                            </div>
+    -->
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
